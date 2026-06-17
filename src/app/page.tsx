@@ -4,7 +4,7 @@ import Portfolio from "@/components/portfolio/Portfolio";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen w-full overflow-hidden lg:h-screen lg:min-h-0">
+    <main className="relative h-screen min-h-[700px] w-full overflow-hidden">
       <Background />
       <ThemeToggle />
       <Portfolio />

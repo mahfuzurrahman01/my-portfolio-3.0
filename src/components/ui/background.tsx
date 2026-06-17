@@ -8,7 +8,7 @@ export function Background({ className }: BackgroundProps) {
   return (
     <div
       aria-hidden
-      className={cn("pointer-events-none absolute inset-0 -z-10", className)}
+      className={cn("pointer-events-none fixed inset-0 -z-10", className)}
     >
       {/* Noise Texture (Darker Dots) */}
       <div
