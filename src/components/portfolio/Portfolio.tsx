@@ -2,61 +2,56 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { AnimatePresence, motion, type Variants } from "framer-motion";
 import {
-  Activity,
-  Atom,
-  Award,
-  Boxes,
   Briefcase,
   BookOpen,
   Calendar,
-  Code,
-  Database,
   Folder,
-  Languages,
-  Mail,
-  Network,
-  Plug,
-  Share2,
+  GraduationCap,
+  Route,
   Sparkles,
-  Triangle,
-  Users,
-  Wrench,
   ArrowUpRight,
+  MapPin,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import ThemeToggle from "@/components/ThemeToggle";
+import { GooeyText } from "@/components/ui/gooey-text-morphing";
+import {
+  SiGithub,
+  SiX,
+  SiDevdotto,
+  SiGmail,
+} from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
+
+const GREETINGS = [
+  "Hello",
+  "Hola",
+  "Bonjour",
+  "Ciao",
+  "Hallo",
+  "Olá",
+  "你好",
+  "こんにちは",
+  "안녕하세요",
+  "नमस्ते",
+  "مرحبا",
+  "Aloha",
+];
 import {
   profile,
-  skills,
+  skillGroups,
   projects,
   experience,
-  events,
-  blogs,
+  education,
+  type DevtoArticle,
 } from "@/lib/portfolio-data";
+import { SkillIcon } from "./skillIcons";
 
-const ICONS = {
-  code: Code,
-  atom: Atom,
-  triangle: Triangle,
-  database: Database,
-  boxes: Boxes,
-  network: Network,
-  share2: Share2,
-  wrench: Wrench,
-  activity: Activity,
-  plug: Plug,
-  users: Users,
-  languages: Languages,
-} as const;
-
-type SkillTab = keyof typeof skills;
-
-const TABS: { key: SkillTab; label: string }[] = [
-  { key: "software", label: "Software" },
-  { key: "expertise", label: "Expertise" },
-  { key: "language", label: "Language" },
-];
+// Short label per skill group (first word, "Frontend Development" → "Frontend")
+const tabLabel = (title: string) => title.split(/\s|&/)[0];
 
 const container: Variants = {
   hidden: {},
@@ -78,26 +73,30 @@ const tabContent: Variants = {
   exit: { opacity: 0, y: -6, transition: { duration: 0.15 } },
 };
 
-export default function Portfolio() {
-  const [tab, setTab] = useState<SkillTab>("software");
-  const items = skills[tab];
+type PortfolioProps = { latestBlogs?: DevtoArticle[] };
+
+export default function Portfolio({ latestBlogs = [] }: PortfolioProps) {
+  const [tabIdx, setTabIdx] = useState(0);
+  const activeGroup = skillGroups[tabIdx];
+  const totalSkills = skillGroups.reduce((n, g) => n + g.skills.length, 0);
 
   return (
     <motion.div
       variants={container}
       initial="hidden"
       animate="show"
-      className="mx-auto flex h-full max-w-6xl flex-col gap-3 px-6 py-5 lg:gap-4 lg:py-6"
+      className="mx-auto flex h-full max-w-6xl flex-col gap-3 px-4 py-4 sm:px-6 sm:py-5 lg:gap-4 lg:py-6"
     >
       {/* Header */}
       <motion.div
         variants={item}
-        className="flex items-end justify-between"
+        className="flex items-center justify-end gap-2"
       >
-        <h1 className="text-3xl font-semibold tracking-tight text-foreground/90 lg:text-4xl">
-          Portfolio
-        </h1>
-        <span className="text-xs text-foreground/50">{profile.location}</span>
+        <ThemeToggle />
+        <span className="inline-flex h-8 items-center gap-1.5 rounded-full border border-foreground/10 bg-background/80 px-3 text-xs text-foreground/70 shadow-sm backdrop-blur-md">
+          <MapPin size={12} className="text-rose-400" />
+          {profile.location}
+        </span>
       </motion.div>
 
       {/* Hero row */}
@@ -105,21 +104,17 @@ export default function Portfolio() {
         <motion.div variants={item}>
           <Card className="flex h-full flex-col justify-between gap-3 p-5">
             <div className="space-y-3">
-              <h2 className="flex items-center gap-2 text-xl font-medium leading-tight lg:text-2xl">
-                <motion.span
-                  aria-hidden
-                  className="inline-block origin-[70%_70%]"
-                  animate={{ rotate: [0, 14, -8, 14, -4, 10, 0] }}
-                  transition={{
-                    duration: 1.6,
-                    ease: "easeInOut",
-                    repeat: Infinity,
-                    repeatDelay: 1.2,
-                  }}
-                >
-                  👋
-                </motion.span>
-                Hello, I&apos;m {profile.shortName}.
+              <div className="relative h-11 w-full lg:h-12">
+                <GooeyText
+                  texts={GREETINGS}
+                  morphTime={1}
+                  cooldownTime={1.4}
+                  className="h-full"
+                  textClassName="!text-3xl lg:!text-4xl font-bold tracking-tight"
+                />
+              </div>
+              <h2 className="text-2xl font-semibold leading-tight tracking-tight lg:text-3xl">
+                I&apos;m {profile.shortName}.
               </h2>
               <p className="text-sm leading-relaxed text-foreground/70 lg:text-[15px]">
                 I&apos;m a <b className="text-foreground">{profile.title}</b>{" "}
@@ -130,20 +125,20 @@ export default function Portfolio() {
               href={profile.calLink}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex w-fit items-center gap-2 rounded-lg border border-foreground/10 bg-foreground/5 px-3 py-1.5 text-sm hover:bg-foreground/10"
+              className="inline-flex w-fit items-center gap-2 rounded-full border border-foreground/15 bg-foreground/5 px-4 py-1.5 text-sm hover:bg-foreground/10"
             >
               <Calendar size={14} /> Book a call
             </a>
           </Card>
         </motion.div>
         <motion.div variants={item}>
-          <Card className="relative h-full min-h-[160px] overflow-hidden p-0">
+          <Card className="group relative h-full min-h-[160px] overflow-hidden p-0">
             <Image
               src={profile.avatar}
               alt={profile.name}
               fill
               sizes="(max-width: 768px) 100vw, 400px"
-              className="object-cover"
+              className="object-cover object-[center_15%] grayscale transition duration-500 ease-out group-hover:grayscale-0 group-hover:scale-[1.02]"
               priority
             />
             <div className="absolute bottom-3 left-3 rounded-md bg-black/60 px-2 py-1 text-xs text-white backdrop-blur">
@@ -154,13 +149,13 @@ export default function Portfolio() {
       </section>
 
       {/* Bento grid — Experience featured */}
-      <section className="grid min-h-0 flex-1 grid-cols-4 grid-rows-4 gap-3 lg:gap-4">
+      <section className="grid min-h-0 flex-1 grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-4 lg:gap-4">
         {/* Experience — FEATURED, top-left big */}
         <BentoTile
-          className="col-span-2 row-span-3"
+          className="md:col-span-2 lg:col-span-2 lg:row-span-3"
           title="Experience"
           icon={<Briefcase size={16} className="text-emerald-400" />}
-          href="#experience"
+          href="/experience"
           accent="emerald"
           featured
           badge={
@@ -209,151 +204,201 @@ export default function Portfolio() {
               </li>
             ))}
           </ol>
+          {education[0] && (
+            <div className="mt-3 flex items-center gap-2 border-t border-emerald-400/15 pt-2 text-[11px] text-foreground/55">
+              <GraduationCap size={12} className="text-emerald-400/80" />
+              <span className="truncate">
+                <b className="font-semibold text-foreground/80">
+                  {education[0].degree}
+                </b>{" "}
+                · {education[0].school} · {education[0].range}
+              </span>
+            </div>
+          )}
         </BentoTile>
 
         {/* Skills — top-right */}
         <BentoTile
-          className="col-span-2 row-span-2"
+          className="md:col-span-2 lg:col-span-2 lg:row-span-2"
           title="Skills"
           icon={<Sparkles size={14} className="text-violet-400" />}
-          href="#skills"
+          href="/skills"
           accent="violet"
         >
           <div className="flex h-full flex-col gap-3">
             <div className="relative flex gap-1 rounded-lg bg-foreground/5 p-1">
-              {TABS.map((t) => (
+              {skillGroups.map((g, i) => (
                 <button
-                  key={t.key}
-                  onClick={() => setTab(t.key)}
+                  key={g.title}
+                  onClick={() => setTabIdx(i)}
                   className={cn(
                     "relative flex-1 rounded-md px-2 py-1 text-xs",
-                    tab === t.key
+                    tabIdx === i
                       ? "text-foreground"
                       : "text-foreground/60 hover:text-foreground",
                   )}
                 >
-                  {tab === t.key && (
+                  {tabIdx === i && (
                     <motion.span
                       layoutId="skill-tab-pill"
                       className="absolute inset-0 rounded-md bg-foreground/10"
                       transition={{ type: "spring", stiffness: 400, damping: 30 }}
                     />
                   )}
-                  <span className="relative">{t.label}</span>
+                  <span className="relative">{tabLabel(g.title)}</span>
                 </button>
               ))}
             </div>
             <AnimatePresence mode="wait">
               <motion.div
-                key={tab}
+                key={tabIdx}
                 variants={tabContent}
                 initial="hidden"
                 animate="show"
                 exit="exit"
-                className="grid grid-cols-3 gap-2"
+                className="grid grid-cols-2 gap-2 sm:grid-cols-3"
               >
-                {items.map((s) => {
-                  const Icon = ICONS[s.icon as keyof typeof ICONS] ?? Sparkles;
-                  return (
-                    <span
-                      key={s.name}
-                      className="flex items-center gap-2 rounded-lg border border-foreground/10 bg-foreground/[0.03] px-2.5 py-2 text-xs"
-                    >
-                      <Icon size={14} className="text-foreground/60" />
-                      <span className="truncate">{s.name}</span>
-                    </span>
-                  );
-                })}
+                {activeGroup.skills.map((s) => (
+                  <span
+                    key={s.name}
+                    className="flex items-center gap-2 rounded-lg border border-foreground/10 bg-foreground/[0.03] px-2.5 py-2 text-xs"
+                  >
+                    <SkillIcon
+                      skill={s}
+                      size={14}
+                      className="text-foreground/70"
+                    />
+                    <span className="truncate">{s.name}</span>
+                  </span>
+                ))}
               </motion.div>
             </AnimatePresence>
+            <div className="mt-auto flex items-center justify-between border-t border-foreground/10 pt-2 text-[10px] text-foreground/45">
+              <span>
+                {totalSkills} total · {profile.years}+ yrs active
+              </span>
+              <span className="text-violet-400">View all →</span>
+            </div>
           </div>
         </BentoTile>
 
         {/* Projects */}
         <BentoTile
-          className="col-span-1 row-span-2"
+          className="lg:col-span-1 lg:row-span-2"
           title="Projects"
           icon={<Folder size={14} className="text-cyan-400" />}
-          href="#projects"
+          href="/projects"
           accent="cyan"
         >
           <ul className="flex flex-col gap-2">
-            {projects.map((p) => (
+            {projects.slice(0, 3).map((p) => (
               <li key={p.name} className="min-w-0">
                 <div className="truncate text-[12px] font-medium">{p.name}</div>
                 <div className="truncate text-[10px] text-foreground/55">
-                  {p.note}
+                  {p.type}
                 </div>
               </li>
             ))}
           </ul>
         </BentoTile>
 
-        {/* Events */}
+        {/* Trail — education + certifications */}
         <BentoTile
-          className="col-span-1 row-span-2"
-          title="Events"
-          icon={<Award size={14} className="text-amber-400" />}
-          href="#events"
+          className="lg:col-span-1 lg:row-span-2"
+          title="Trail"
+          icon={<Route size={14} className="text-amber-400" />}
+          href="/trail"
           accent="amber"
         >
-          <ul className="flex flex-col gap-2">
-            {events.map((ev) => (
-              <li key={ev.name} className="min-w-0">
-                <div className="truncate text-[12px] font-medium">{ev.name}</div>
+          <ul className="flex flex-col gap-2.5 text-[11px]">
+            {education.slice(0, 2).map((ed) => (
+              <li key={ed.id} className="min-w-0">
+                <div className="truncate font-medium text-foreground/85">
+                  {ed.degree}
+                </div>
                 <div className="truncate text-[10px] text-foreground/55">
-                  {ev.role} · {ev.year}
+                  {ed.school} · {ed.range}
                 </div>
               </li>
             ))}
+            <li className="mt-1 inline-flex w-fit items-center gap-1 rounded-full border border-amber-400/30 bg-amber-400/10 px-2 py-0.5 text-[10px] font-medium text-amber-400">
+              <GraduationCap size={10} /> + certifications
+            </li>
           </ul>
         </BentoTile>
 
-        {/* Blogs */}
+        {/* Blogs — dev.to */}
         <BentoTile
-          className="col-span-2 row-span-1"
+          className="md:col-span-2 lg:col-span-2 lg:row-span-1"
           title="Blogs"
           icon={<BookOpen size={14} className="text-rose-400" />}
-          href="#blog"
+          href="/blog"
           accent="rose"
         >
-          <ul className="grid grid-cols-2 gap-2">
-            {blogs.map((b) => (
-              <li
-                key={b.title}
-                className="min-w-0 rounded-lg border border-foreground/10 bg-foreground/[0.03] px-3 py-1.5"
-              >
-                <div className="truncate text-[12px] font-medium">{b.title}</div>
-                <div className="truncate text-[10px] text-foreground/55">
-                  {b.meta}
-                </div>
-              </li>
-            ))}
-          </ul>
+          {latestBlogs.length > 0 ? (
+            <ul className="grid grid-cols-2 gap-2">
+              {latestBlogs.slice(0, 2).map((b) => (
+                <li
+                  key={b.id}
+                  className="min-w-0 rounded-lg border border-foreground/10 bg-foreground/[0.03] px-3 py-1.5"
+                >
+                  <div className="truncate text-[12px] font-medium">
+                    {b.title}
+                  </div>
+                  <div className="truncate text-[10px] text-foreground/55">
+                    {new Date(b.published_at).toLocaleDateString("en-US", {
+                      month: "short",
+                      year: "numeric",
+                    })}{" "}
+                    · {b.reading_time_minutes} min
+                  </div>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div className="flex h-full items-center justify-center text-[11px] text-foreground/45">
+              Loading from dev.to…
+            </div>
+          )}
         </BentoTile>
       </section>
 
       {/* Contact bar */}
       <motion.div variants={item}>
         <Card className="flex flex-wrap items-center justify-between gap-3 p-4">
-          <span className="text-xs text-foreground/55">
-            Let&apos;s build something.
+          <span className="text-xs font-medium text-foreground/70">
+            Building something? <span className="text-foreground">Let&apos;s talk.</span>
           </span>
           <div className="flex flex-wrap gap-2">
-            <ContactPill
+            <SocialPill
               href={`mailto:${profile.email}`}
-              icon={<Mail size={13} />}
+              icon={<SiGmail />}
               label="Email"
+              iconClass="text-[#EA4335]"
             />
-            <ContactPill
+            <SocialPill
               href={profile.github}
-              icon={<GithubGlyph />}
+              icon={<SiGithub />}
               label="GitHub"
+              iconClass="text-foreground"
             />
-            <ContactPill
+            <SocialPill
               href={profile.linkedin}
-              icon={<LinkedInGlyph />}
+              icon={<FaLinkedin />}
               label="LinkedIn"
+              iconClass="text-[#0A66C2]"
+            />
+            <SocialPill
+              href={profile.x}
+              icon={<SiX />}
+              label="X"
+              iconClass="text-foreground"
+            />
+            <SocialPill
+              href={profile.devto}
+              icon={<SiDevdotto />}
+              label="dev.to"
+              iconClass="text-foreground"
             />
           </div>
         </Card>
@@ -450,7 +495,7 @@ function BentoTile({
           </div>
         </div>
         <div className="min-h-0 flex-1 overflow-hidden">{children}</div>
-        <a
+        <Link
           href={href}
           aria-label={`Open ${title}`}
           className={cn(
@@ -461,7 +506,7 @@ function BentoTile({
           )}
         >
           <ArrowUpRight size={13} />
-        </a>
+        </Link>
       </div>
     </motion.div>
   );
@@ -486,39 +531,33 @@ function Card({
   );
 }
 
-function GithubGlyph() {
-  return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-      <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55 0-.27-.01-1-.02-1.97-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.71 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.07 0 0 .97-.31 3.18 1.18a11 11 0 015.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.6.23 2.78.11 3.07.74.81 1.19 1.84 1.19 3.1 0 4.44-2.7 5.41-5.27 5.7.41.36.78 1.07.78 2.16 0 1.56-.02 2.82-.02 3.2 0 .31.21.67.8.55A11.51 11.51 0 0023.5 12C23.5 5.65 18.35.5 12 .5z" />
-    </svg>
-  );
-}
-
-function LinkedInGlyph() {
-  return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-      <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3v9zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" />
-    </svg>
-  );
-}
-
-function ContactPill({
+function SocialPill({
   href,
   icon,
   label,
+  iconClass,
 }: {
   href: string;
   icon: React.ReactNode;
   label: string;
+  iconClass?: string;
 }) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="inline-flex items-center gap-1.5 rounded-full border border-foreground/10 bg-foreground/[0.04] px-3 py-1.5 text-xs hover:bg-foreground/10"
+      className="group inline-flex items-center gap-1.5 rounded-full border border-foreground/10 bg-foreground/[0.04] px-3 py-1.5 text-xs transition hover:bg-foreground/10"
     >
-      {icon} {label}
+      <span
+        className={cn(
+          "inline-flex h-3.5 w-3.5 items-center justify-center transition group-hover:scale-110",
+          iconClass,
+        )}
+      >
+        {icon}
+      </span>
+      {label}
     </a>
   );
 }

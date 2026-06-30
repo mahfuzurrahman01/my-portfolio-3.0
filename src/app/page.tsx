@@ -1,13 +1,13 @@
 import Background from "@/components/ui/background";
-import ThemeToggle from "@/components/ThemeToggle";
 import Portfolio from "@/components/portfolio/Portfolio";
+import { getDevtoArticles } from "@/lib/portfolio-data";
 
-export default function Home() {
+export default async function Home() {
+  const latestBlogs = await getDevtoArticles(6);
   return (
-    <main className="relative h-screen min-h-[700px] w-full overflow-hidden">
+    <main className="relative w-full overflow-x-hidden min-h-screen lg:h-screen lg:min-h-[720px] lg:overflow-hidden">
       <Background />
-      <ThemeToggle />
-      <Portfolio />
+      <Portfolio latestBlogs={latestBlogs} />
     </main>
   );
 }

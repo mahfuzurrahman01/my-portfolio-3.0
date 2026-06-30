@@ -26,7 +26,7 @@ export function Background({ className }: BackgroundProps) {
         style={{
           background: "#0a0a0a",
           backgroundImage:
-            "radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.18) 1px, transparent 0)",
+            "radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.10) 1px, transparent 0)",
           backgroundSize: "20px 20px",
         }}
       />

@@ -1,0 +1,487 @@
+{
+  "profile": {
+    "name": "Mafuzur Rahman",
+    "title": "Software Developer & Technical Writer",
+    "greeting": "Hey there, 👋",
+    "roles": [
+      "I'm Mafuzur Rahman",
+      "A Software Developer",
+      "A Technical Writer",
+      "An AI Enthusiast"
+    ],
+    "headlineTags": [
+      "TypeScript",
+      "React / Next.js",
+      "Node.js",
+      "AI Workflows",
+      "Technical Writing"
+    ],
+    "bio": "Full-stack engineer turning product ideas into shipped AI-powered web and mobile apps across healthcare, ERP and SaaS — owning everything from React/Next.js frontends to Node/Prisma APIs and Gemini/OpenAI agent workflows. I also write the docs, scripts and launch copy that get the product seen.",
+    "email": "mafuzur.rahman032@gmail.com"
+  },
+  "socials": {
+    "github": "https://github.com/mahfuzurrahman01",
+    "linkedin": "https://www.linkedin.com/in/mafuzurrahman01/",
+    "x": "https://x.com/mahfuzur_kaizen",
+    "email": "mailto:mafuzur.rahman032@gmail.com",
+    "devto": "https://dev.to/mahfuzurrahman01"
+  },
+  "navigation": [
+    { "label": "Home", "href": "/" },
+    { "label": "Blog", "href": "/blog" },
+    { "label": "Extensions", "href": "/extensions" }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "title": "Software Developer",
+      "company": "ESAP",
+      "location": "Riyadh, Saudi Arabia • Remote",
+      "period": "Dec 2024 - Present",
+      "description": "Currently at ESAP, I'm at the forefront of ERP software development, focusing on the HRMS module. I've been instrumental in streamlining the payroll process, making it significantly more intuitive and efficient than traditional ERP systems through user-centric React-based UI components. Additionally, I'm actively contributing to enhancing the hiring process with innovative AI-driven workflows.",
+      "technologies": [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "Express.js",
+        "MongoDB",
+        "Node.js"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Frontend Developer",
+      "company": "Zeigen",
+      "location": "New Delhi, India • Remote",
+      "period": "Jan 2023 - Nov 2024",
+      "description": "Zeigen is a digital therapeutics platform revolutionizing healthcare for individuals with chronic conditions. With evidence-based tools and integrated cognitive behavioral therapies, we empower users to take charge of their health. As a key player, I've worked extensively on the frontend architecture, ensuring responsive design, optimizing performance, and collaborating with cross-functional teams has been instrumental in delivering a seamless and enriching user experience, paving the way for a healthier future.",
+      "technologies": [
+        "TypeScript",
+        "Next.js",
+        "React.js",
+        "Shadcn/ui",
+        "Vercel"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Full Stack Developer (Intern)",
+      "company": "CalicheX",
+      "location": "Hyderabad, India • Remote",
+      "period": "Nov 2022 - Jan 2023",
+      "description": "- Developed UI components and pages using React and implemented new features and functionality on an existing website using NextJs, optimizing user engagement.\n- Built CRM UI for data visualization and analytics.",
+      "technologies": [
+        "React.js",
+        "Tailwind CSS",
+        "Next.js",
+        "TypeScript",
+        "Express.js"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": 5,
+      "name": "Zencode Agency",
+      "type": "Agency / Business",
+      "description": "My own agency that I run alongside my day job — built so I could learn first-hand how to actually run a business (sales, scope, delivery, ops). Designs and ships small product sites for early-stage clients.",
+      "techStack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
+      "liveLink": "https://zencode-smoky.vercel.app/",
+      "githubLink": "Private Repository",
+      "image": ""
+    },
+    {
+      "id": 7,
+      "name": "newBee Studio",
+      "type": "Agency / Studio",
+      "description": "Boutique digital agency site (est. 2023) showcasing UI/UX, web, app, automation and Webflow/Framer services. Built with a focus on pixel-perfect interfaces and conversion-driven storytelling for early-stage brands.",
+      "techStack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
+      "liveLink": "https://newbee-rosy.vercel.app/",
+      "githubLink": "https://github.com/mahfuzurrahman01/newbee-agency",
+      "image": ""
+    },
+    {
+      "id": 8,
+      "name": "Form Noir Studio",
+      "type": "Architecture Firm",
+      "description": "Marketing site for Form Noir — an international architecture and design studio working on high-end residential, commercial and interior projects. Built around their philosophy that \"architecture is not a service, it is a position,\" with editorial typography and intentional motion.",
+      "techStack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
+      "liveLink": "https://formnoir-arch-website.vercel.app/",
+      "githubLink": "Private Repository",
+      "image": ""
+    },
+    {
+      "id": 9,
+      "name": "DOT3 Architects",
+      "type": "Architecture Firm",
+      "description": "Marketing site for DOT3 — a Bangladesh-based architecture practice with the tagline \"Designing Space. Defining Time.\" Built with editorial layout, intentional whitespace, and motion that lets the project work breathe.",
+      "techStack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
+      "liveLink": "https://dot-3-arch.vercel.app/",
+      "githubLink": "https://github.com/mahfuzurrahman01/dot-3-arch",
+      "image": ""
+    },
+    {
+      "id": 10,
+      "name": "Bookish",
+      "type": "E-book Platform",
+      "description": "\"Your Literary Haven\" — a curated e-book discovery platform where readers can browse, explore and engage with literature. Built as a clean, content-first reading experience with category navigation and motion-led transitions.",
+      "techStack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
+      "liveLink": "https://bookish-e-book.vercel.app/",
+      "githubLink": "https://github.com/mahfuzurrahman01/bookish-e-book",
+      "image": ""
+    },
+    {
+      "id": 11,
+      "name": "Frame-Animated Landing",
+      "type": "Experiment / R&D",
+      "description": "A test of how frame-by-frame (FPS-based) scroll animation actually performs on the web. Wrapped around a sci-fi \"Project Astra\" concept to make the experiment look intentional — futuristic HUD, system readouts and scroll-driven sequences.",
+      "techStack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Canvas / Frame Sequence"
+      ],
+      "liveLink": "https://frame-animated-landing-page.vercel.app/",
+      "githubLink": "https://github.com/mahfuzurrahman01/frame-animated-landing-page",
+      "image": ""
+    },
+    {
+      "id": 6,
+      "name": "VELO Store",
+      "type": "E-commerce",
+      "description": "Athletic-fashion storefront for VELO — \"Move Without Limits\". Built end-to-end on Next.js 15 with a custom localStorage cart, 20+ products, and a brand-driven motion design language across the catalog and checkout flow.",
+      "techStack": [
+        "Next.js 15",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
+      "liveLink": "https://velo-store.vercel.app/",
+      "githubLink": "https://github.com/mahfuzurrahman01/velo-store",
+      "image": ""
+    },
+    {
+      "id": 1,
+      "name": "ATS Resume Checker",
+      "type": "Tools",
+      "description": "Professional-grade resume analysis and optimization. Get instant AI-powered feedback to ensure your resume passes through Applicant Tracking Systems seamlessly.",
+      "techStack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "AI Integration",
+        "OpenAI API"
+      ],
+      "liveLink": "https://ats-resume-checker-gilt.vercel.app/",
+      "githubLink": "https://github.com/mahfuzurrahman01/ATS-resume-checker",
+      "image": "https://res.cloudinary.com/dka0q8f82/image/upload/v1759669982/ats-resume-checker_wkkhvx.png"
+    },
+    {
+      "id": 2,
+      "name": "FlightControl Pro",
+      "type": "Dashboard",
+      "description": "FlightControl Pro is a premium, production-ready aviation operations dashboard built with modern web technologies. Perfect for airlines, airports, air traffic control centers, and aviation management companies.",
+      "techStack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Real-time Data"
+      ],
+      "liveLink": "https://flighty-snowy.vercel.app/",
+      "githubLink": "https://github.com/mahfuzurrahman01/flight-control",
+      "image": "https://res.cloudinary.com/dka0q8f82/image/upload/v1756823707/03-live-flights_dnlknt.png"
+    },
+    {
+      "id": 3,
+      "name": "Aura Squad",
+      "type": "E-commerce",
+      "description": "A premium Bangladeshi fashion brand specializing in artisanal acid-wash fabric t-shirts and apparel. Built a complete e-commerce ecosystem from scratch, featuring seamless shopping experiences, secure payment processing, inventory management, and an intuitive admin dashboard that empowers the brand to scale effortlessly.",
+      "techStack": [
+        "Next.js",
+        "TypeScript",
+        "MongoDB",
+        "Stripe",
+        "Tailwind CSS",
+        "Admin Dashboard"
+      ],
+      "liveLink": "https://aura-squad.com",
+      "githubLink": "Private Repository",
+      "image": "https://res.cloudinary.com/dka0q8f82/image/upload/v1759670529/aura-squad_axhkc5.png"
+    },
+    {
+      "id": 4,
+      "name": "GitHub Profile Card",
+      "type": "Fun Project",
+      "description": "Introducing Gitto Profile, a delightful project I crafted using Next.js, TypeScript, and Tailwind CSS! 🚀 With Gitto Profile, users can effortlessly generate personalized GitHub profile cards by simply entering their GitHub username. This nifty tool then fetches and displays essential information from their GitHub profile in a visually appealing and concise format.",
+      "techStack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "GitHub API",
+        "Responsive Design"
+      ],
+      "liveLink": "https://gitto-profile.vercel.app/",
+      "githubLink": "https://github.com/mahfuzurrahman01/gitto-profile",
+      "image": "https://res.cloudinary.com/dka0q8f82/image/upload/v1759671667/Screenshot_2025-10-05_194033_bzcrbc.png"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Frontend",
+      "skills": [
+        { "name": "React", "icon": "atom", "type": "emoji" },
+        { "name": "Next.js", "icon": "triangle", "type": "emoji" },
+        { "name": "React Native", "icon": "📱", "type": "emoji" },
+        { "name": "TypeScript", "icon": "code", "type": "emoji" },
+        { "name": "JavaScript", "icon": "code", "type": "emoji" },
+        { "name": "Tailwind CSS", "icon": "🎨", "type": "emoji" },
+        { "name": "Shadcn/ui", "icon": "🧩", "type": "emoji" }
+      ]
+    },
+    {
+      "title": "Backend & Database",
+      "skills": [
+        { "name": "Node.js", "icon": "code", "type": "emoji" },
+        { "name": "Express.js", "icon": "🚂", "type": "emoji" },
+        { "name": "Prisma", "icon": "database", "type": "emoji" },
+        { "name": "MongoDB", "icon": "database", "type": "emoji" },
+        { "name": "PostgreSQL", "icon": "🐘", "type": "emoji" },
+        { "name": "Supabase", "icon": "⚡", "type": "emoji" },
+        { "name": "REST APIs", "icon": "plug", "type": "emoji" }
+      ]
+    },
+    {
+      "title": "AI & Automation",
+      "skills": [
+        { "name": "Gemini API", "icon": "✨", "type": "emoji" },
+        { "name": "OpenAI API", "icon": "🤖", "type": "emoji" },
+        { "name": "Claude API", "icon": "🧠", "type": "emoji" },
+        { "name": "Vercel AI SDK", "icon": "▲", "type": "emoji" },
+        { "name": "LangChain", "icon": "⛓️", "type": "emoji" },
+        { "name": "Mastra AI", "icon": "🤖", "type": "emoji" },
+        { "name": "N8N", "icon": "🔀", "type": "emoji" }
+      ]
+    },
+    {
+      "title": "Tools & DevOps",
+      "skills": [
+        { "name": "Git", "icon": "git", "type": "emoji" },
+        { "name": "GitHub", "icon": "git", "type": "emoji" },
+        { "name": "Vercel", "icon": "▲", "type": "emoji" },
+        { "name": "Docker", "icon": "🐳", "type": "emoji" },
+        { "name": "AWS", "icon": "☁️", "type": "emoji" },
+        { "name": "Cursor", "icon": "🖱️", "type": "emoji" },
+        { "name": "Figma", "icon": "🎨", "type": "emoji" }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "degree": "Bachelor of Science in Biochemistry and Molecular Biology",
+      "institution": "National University",
+      "location": "Bangladesh",
+      "period": "2019 - 2023",
+      "gpa": "Honors",
+      "description": "Dropout from National University due to some personal reasons."
+    },
+    {
+      "id": 2,
+      "degree": "Career Transition to Frontend Development",
+      "institution": "Self-Directed Learning",
+      "location": "Online",
+      "period": "2023 - Present",
+      "description": "Embarked on an intensive self-directed learning journey to transition from biochemistry to frontend development. Focused on building practical skills through hands-on projects and real-world applications.",
+      "achievements": [
+        "Completed comprehensive web development curriculum",
+        "Built multiple production-ready applications",
+        "Transitioned to full-time frontend development role"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "id": 1,
+      "title": "Frontend Basics",
+      "platform": "Coursera",
+      "instructor": "Various Instructors",
+      "period": "2023",
+      "description": "Comprehensive introduction to frontend development covering HTML, CSS, JavaScript fundamentals, and responsive design principles.",
+      "image": "https://res.cloudinary.com/dka0q8f82/image/upload/v1759673227/android-chrome-512x512-1_iay7u6.png"
+    },
+    {
+      "id": 2,
+      "title": "React Advanced",
+      "platform": "Coursera",
+      "instructor": "Meta Team",
+      "period": "2023",
+      "description": "Advanced React concepts including hooks, context API, performance optimization, and modern React patterns.",
+      "image": "https://res.cloudinary.com/dka0q8f82/image/upload/v1759673227/android-chrome-512x512-1_iay7u6.png"
+    },
+    {
+      "id": 3,
+      "title": "Complete Web Development",
+      "platform": "Udemy",
+      "instructor": "Various Instructors",
+      "period": "2023",
+      "description": "Full-stack web development course covering frontend, backend, databases, and deployment strategies.",
+      "image": "https://res.cloudinary.com/dka0q8f82/image/upload/v1759673227/udemy-logo_brandlogos.net_xwww7_tclb8o.png"
+    },
+    {
+      "id": 4,
+      "title": "React Native - The Practical Guide [2025]",
+      "platform": "Udemy",
+      "instructor": "Maximilian Schwarzmüller",
+      "period": "2024",
+      "description": "Comprehensive React Native course covering mobile app development, navigation, state management, and publishing to app stores.",
+      "image": "https://res.cloudinary.com/dka0q8f82/image/upload/v1759673227/udemy-logo_brandlogos.net_xwww7_tclb8o.png"
+    },
+    {
+      "id": 5,
+      "title": "DevOps Fundamentals",
+      "platform": "Online Course",
+      "instructor": "Self Learning",
+      "period": "Present",
+      "description": "Currently learning DevOps practices including Docker, CI/CD pipelines, cloud deployment, and infrastructure automation.",
+      "image": "https://res.cloudinary.com/dka0q8f82/image/upload/v1759673227/udemy-logo_brandlogos.net_xwww7_tclb8o.png"
+    }
+  ],
+  "extensions": [
+    {
+      "id": 1,
+      "slug": "pre-call",
+      "name": "Pre-Call Device Checker",
+      "summary": "Quick camera, microphone, and speaker test before online meetings",
+      "category": "Productivity",
+      "icon": "🎥",
+      "image": "https://res.cloudinary.com/dka0q8f82/image/upload/v1759669982/ats-resume-checker_wkkhvx.png",
+      "chromeStoreLink": "https://chromewebstore.google.com/detail/dpcdachonbcmcjoccfmepdlepdhpmcna?utm_source=item-share-cb",
+      "features": [
+        "Camera Test",
+        "Microphone Test",
+        "Speaker Test",
+        "Device Detection",
+        "Privacy-Focused"
+      ],
+      "tags": ["Productivity", "Video Calls", "Privacy"],
+      "details": {
+        "tagline": "Quick camera, microphone, and speaker test before online meetings",
+        "heroTags": ["Productivity", "Privacy-Focused", "Lightweight"],
+        "featureDetails": [
+          { "title": "Camera Test", "description": "Live video preview to verify your camera works perfectly" },
+          { "title": "Microphone Test", "description": "Real-time audio level indicator to check your mic" },
+          { "title": "Speaker Test", "description": "Play a test tone to verify audio output quality" },
+          { "title": "Device Detection", "description": "Lists all available cameras, microphones, and speakers" }
+        ],
+        "perfectFor": [
+          "Pre-meeting device checks",
+          "Troubleshooting audio/video issues",
+          "Quick verification before interviews",
+          "Testing after system updates",
+          "Daily standup preparations"
+        ],
+        "privacyFeatures": [
+          "No recording or storage of any data",
+          "No internet connection required",
+          "No analytics or tracking whatsoever",
+          "100% local processing on your device",
+          "Auto-stops when popup closes"
+        ],
+        "howToUse": [
+          "First time: Grant camera/microphone permissions (one-time setup)",
+          "Click the extension icon in your browser",
+          "Test your camera, microphone, and speakers",
+          "Join your meeting with confidence!"
+        ],
+        "longDescription": [
+          "Test your camera, microphone, and speaker before joining any online meeting (Google Meet, Zoom, Microsoft Teams, Discord, etc.). This extension provides a quick and reliable way to ensure all your devices are working correctly before important calls.",
+          "Simple, lightweight, and privacy-focused. No recording, no tracking, everything runs locally on your device. Perfect for remote workers, students, and anyone who relies on video conferencing."
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "slug": "desky-clock",
+      "name": "Desky Clock",
+      "summary": "Smart Pomodoro timer built around your real workday — meeting-aware, media-aware, and fully configurable",
+      "category": "Productivity",
+      "icon": "⏱",
+      "image": "https://res.cloudinary.com/dka0q8f82/image/upload/v1759669982/ats-resume-checker_wkkhvx.png",
+      "chromeStoreLink": "https://chromewebstore.google.com/detail/bepcdalbhkpbhjjmbainjgnhmjdhnode?utm_source=item-share-cb",
+      "features": [
+        "Focus Timer",
+        "Meeting-Aware",
+        "Media-Aware",
+        "Streaks & Stats",
+        "Auto-Restart",
+        "Dark & Light Mode"
+      ],
+      "tags": ["Productivity", "Pomodoro", "Focus", "Wellness"],
+      "details": {
+        "tagline": "A smart Pomodoro timer built to work around your real workday — not against it.",
+        "heroTags": ["Productivity", "Meeting-Aware", "Privacy-Focused"],
+        "featureDetails": [
+          { "title": "Focus Timer", "description": "Set your focus and break durations. Desky Clock runs silently in the background and brings up a full-screen break when it's time to step away." },
+          { "title": "Full-Screen Break Screen", "description": "A distraction-free black screen with a live countdown, breathing cues, and rotating wellness tips covering eye strain, posture, hydration, and movement." },
+          { "title": "Auto-Restart Loop", "description": "After every break the next focus session starts automatically. Just start once and let it run all day." },
+          { "title": "Meeting-Aware", "description": "On a Google Meet, Zoom, or Microsoft Teams call? Desky Clock detects it and silently queues your break until the meeting ends." },
+          { "title": "Media-Aware", "description": "Watching YouTube or Netflix when a break is due? A small prompt asks if you want to take the break now or skip it — your choice." },
+          { "title": "Streaks & Daily Stats", "description": "Track your focus streak, sessions completed, and total focus minutes. Set a daily session goal and watch your progress bar fill up." }
+        ],
+        "configurableOptions": [
+          "Focus and break durations",
+          "Daily session goal",
+          "Pre-break warning notification",
+          "End-of-day summary at a time you choose",
+          "Your own custom break activity prompts"
+        ],
+        "privacyFeatures": [
+          "All data stays in your browser's local storage",
+          "Nothing is sent anywhere — ever",
+          "No accounts, no sign-ups required",
+          "No analytics or tracking whatsoever",
+          "Works fully offline"
+        ],
+        "howToUse": [
+          "Install the extension from the Chrome Web Store",
+          "Click the Desky Clock icon and set your focus duration",
+          "Hit Start — Desky Clock runs silently in the background",
+          "A full-screen break screen appears when it's time to rest",
+          "The next focus session kicks off automatically after each break"
+        ]
+      }
+    }
+  ],
+  "blog": {
+    "source": "dev.to",
+    "username": "mahfuzurrahman01",
+    "apiUrl": "https://dev.to/api/articles?username=mahfuzurrahman01",
+    "profileUrl": "https://dev.to/mahfuzurrahman01"
+  }
+}
