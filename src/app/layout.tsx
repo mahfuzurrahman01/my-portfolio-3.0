@@ -71,21 +71,12 @@ export const metadata: Metadata = {
     lastName: "Rahman",
     username: "mahfuzurrahman01",
     locale: "en_US",
-    images: [
-      {
-        url: OG_IMAGE,
-        width: 1200,
-        height: 630,
-        alt: `${AUTHOR} — ${ROLE}`,
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${AUTHOR} — Software Developer & AI Builder`,
     description: DESCRIPTION,
     creator: "@mahfuzur_kaizen",
-    images: [OG_IMAGE],
   },
   robots: {
     index: true,
