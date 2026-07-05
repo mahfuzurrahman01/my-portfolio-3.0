@@ -1,8 +1,11 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const size = { width: 32, height: 32 };
+export const size = { width: 192, height: 192 };
 export const contentType = "image/png";
+
+const AVATAR =
+  "https://res.cloudinary.com/dka0q8f82/image/upload/c_fill,g_face,z_1,ar_1:1,w_384,q_auto,f_png/v1778646505/WhatsApp_Image_2026-05-12_at_23.02.53_pvo31f.jpg";
 
 export default function Icon() {
   return new ImageResponse(
@@ -12,19 +15,22 @@ export default function Icon() {
           width: "100%",
           height: "100%",
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background:
-            "linear-gradient(135deg, #22c55e 0%, #06b6d4 100%)",
-          color: "#0a0a0a",
-          fontSize: 22,
-          fontWeight: 900,
-          fontFamily: "system-ui, sans-serif",
-          letterSpacing: "-0.06em",
-          borderRadius: 6,
+          background: "#0a0a0a",
         }}
       >
-        M
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={AVATAR}
+          width={192}
+          height={192}
+          alt="Mafuzur Rahman"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            borderRadius: "50%",
+          }}
+        />
       </div>
     ),
     { ...size },

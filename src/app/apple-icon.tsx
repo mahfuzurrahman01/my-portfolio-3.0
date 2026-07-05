@@ -4,6 +4,9 @@ export const runtime = "edge";
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
+const AVATAR =
+  "https://res.cloudinary.com/dka0q8f82/image/upload/c_fill,g_face,z_1,ar_1:1,w_360,q_auto,f_png/v1778646505/WhatsApp_Image_2026-05-12_at_23.02.53_pvo31f.jpg";
+
 export default function AppleIcon() {
   return new ImageResponse(
     (
@@ -12,55 +15,21 @@ export default function AppleIcon() {
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          background:
-            "linear-gradient(135deg, #0a0a0a 0%, #111111 100%)",
-          color: "#fafafa",
-          fontFamily: "system-ui, sans-serif",
-          position: "relative",
+          background: "#0a0a0a",
         }}
       >
-        <div
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={AVATAR}
+          width={180}
+          height={180}
+          alt="Mafuzur Rahman"
           style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            height: 6,
-            background:
-              "linear-gradient(90deg, #22c55e 0%, #8b5cf6 50%, #06b6d4 100%)",
-            display: "flex",
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
           }}
         />
-        <div
-          style={{
-            fontSize: 112,
-            fontWeight: 900,
-            letterSpacing: "-0.06em",
-            lineHeight: 1,
-            display: "flex",
-            background:
-              "linear-gradient(135deg, #22c55e 0%, #06b6d4 100%)",
-            backgroundClip: "text",
-            color: "transparent",
-          }}
-        >
-          M
-        </div>
-        <div
-          style={{
-            fontSize: 14,
-            color: "#71717a",
-            letterSpacing: "0.28em",
-            textTransform: "uppercase",
-            marginTop: 4,
-            display: "flex",
-          }}
-        >
-          swe
-        </div>
       </div>
     ),
     { ...size },
