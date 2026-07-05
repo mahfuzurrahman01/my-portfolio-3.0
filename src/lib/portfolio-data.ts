@@ -39,7 +39,7 @@ export const profile = {
   linkedin: data.socials.linkedin,
   x: data.socials.x,
   devto: data.socials.devto,
-  calLink: "https://cal.com/", // TODO: paste real Cal.com link
+  calLink: "https://cal.com/swe-mafuzur",
   avatar:
     "https://res.cloudinary.com/dka0q8f82/image/upload/c_fill,g_face,z_0.5,ar_3:4,w_900,q_auto,f_auto/v1778646505/WhatsApp_Image_2026-05-12_at_23.02.53_pvo31f.jpg",
   bio: data.profile.bio,
