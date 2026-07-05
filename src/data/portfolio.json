@@ -313,15 +313,31 @@
     },
     {
       "id": 2,
-      "degree": "Career Transition to Frontend Development",
-      "institution": "Self-Directed Learning",
+      "degree": "Full-Stack Engineering & Mobile Development",
+      "institution": "Self-Directed Learning · Production Experience",
       "location": "Online",
-      "period": "2023 - Present",
-      "description": "Embarked on an intensive self-directed learning journey to transition from biochemistry to frontend development. Focused on building practical skills through hands-on projects and real-world applications.",
+      "period": "2022 - 2024",
+      "description": "Intensive self-directed transition from biochemistry into software engineering — starting with frontend fundamentals, expanding into full-stack (Node.js, Prisma, REST APIs), and contributing to cross-platform mobile apps with React Native in a production healthcare environment.",
       "achievements": [
-        "Completed comprehensive web development curriculum",
-        "Built multiple production-ready applications",
-        "Transitioned to full-time frontend development role"
+        "Built and shipped full-stack web applications with Next.js, Node.js, and PostgreSQL",
+        "Developed React Native mobile features deployed to iOS and Android at Zeigen Health",
+        "Implemented JWT auth, RTK Query state management, and HIPAA-conscious data flows",
+        "Progressed from intern to full-time frontend-to-fullstack engineer within 12 months"
+      ]
+    },
+    {
+      "id": 3,
+      "degree": "AI Engineering, Agentic Systems & Full-Stack AI Products",
+      "institution": "Self-Directed Learning · Active Practice",
+      "location": "Online",
+      "period": "2024 - Present",
+      "description": "Shifted focus into AI-powered product engineering — building agentic workflows, integrating LLM APIs, and owning full-stack AI systems end-to-end. Currently architecting AI-driven ERP and HR platforms with Gemini, OpenAI, and N8N agent orchestration at ESAP.",
+      "achievements": [
+        "Architecting agentic AI workflows with Gemini + N8N that cut manual HR processing by ~60%",
+        "Integrating OpenAI and Gemini APIs into full-stack Next.js/Node.js products",
+        "Designing agent pipelines: prompt engineering, tool calling, multi-step orchestration",
+        "Contributing to React Native mobile builds alongside AI and full-stack responsibilities",
+        "Actively exploring RAG pipelines, LLM fine-tuning, and autonomous agent architectures"
       ]
     }
   ],
@@ -367,8 +383,17 @@
       "title": "DevOps Fundamentals",
       "platform": "Online Course",
       "instructor": "Self Learning",
-      "period": "Present",
-      "description": "Currently learning DevOps practices including Docker, CI/CD pipelines, cloud deployment, and infrastructure automation.",
+      "period": "2024",
+      "description": "Docker, CI/CD pipelines, cloud deployment, and infrastructure automation basics.",
+      "image": "https://res.cloudinary.com/dka0q8f82/image/upload/v1759673227/udemy-logo_brandlogos.net_xwww7_tclb8o.png"
+    },
+    {
+      "id": 6,
+      "title": "AI Agents & Agentic Workflows",
+      "platform": "Self-Directed · Active",
+      "instructor": "LangChain, N8N, Gemini, OpenAI Docs",
+      "period": "2025 - Present",
+      "description": "Hands-on practice building agentic AI systems — tool calling, multi-step agent orchestration, N8N workflow automation, and LLM API integration with Gemini and OpenAI.",
       "image": "https://res.cloudinary.com/dka0q8f82/image/upload/v1759673227/udemy-logo_brandlogos.net_xwww7_tclb8o.png"
     }
   ],

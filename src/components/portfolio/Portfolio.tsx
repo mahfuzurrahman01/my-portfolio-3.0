@@ -85,7 +85,7 @@ export default function Portfolio({ latestBlogs = [] }: PortfolioProps) {
       variants={container}
       initial="hidden"
       animate="show"
-      className="mx-auto flex h-full max-w-6xl flex-col gap-3 px-4 py-4 sm:px-6 sm:py-5 lg:gap-4 lg:py-6"
+      className="mx-auto flex 2xl:h-full max-w-6xl flex-col gap-3 px-4 py-4 sm:px-6 sm:py-5 lg:gap-4 lg:py-6"
     >
       {/* Header */}
       <motion.div
@@ -149,7 +149,7 @@ export default function Portfolio({ latestBlogs = [] }: PortfolioProps) {
       </section>
 
       {/* Bento grid — Experience featured */}
-      <section className="grid min-h-0 flex-1 grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-4 lg:gap-4">
+      <section className="grid 2xl:min-h-0 2xl:flex-1 grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4 lg:gap-4">
         {/* Experience — FEATURED, top-left big */}
         <BentoTile
           className="md:col-span-2 lg:col-span-2 lg:row-span-3"
