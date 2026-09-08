@@ -25,23 +25,23 @@
  */
 
 import data from "@/data/portfolio.json";
+import { siteConfig } from "@/config/site";
 
 /* ---------- Profile / socials --------------------------------- */
 
 export const profile = {
   name: data.profile.name,
-  shortName: "Mafuz",
+  shortName: siteConfig.altNames[1] ?? data.profile.name.split(" ")[0],
   title: data.profile.title,
-  years: 4,
-  location: "Dhaka, Bangladesh",
+  years: siteConfig.yearsExperience,
+  location: `${siteConfig.location.city}, ${siteConfig.location.country}`,
   email: data.profile.email,
   github: data.socials.github,
   linkedin: data.socials.linkedin,
   x: data.socials.x,
   devto: data.socials.devto,
-  calLink: "https://cal.com/swe-mafuzur",
-  avatar:
-    "https://res.cloudinary.com/dka0q8f82/image/upload/c_fill,g_face,z_0.5,ar_3:4,w_900,q_auto,f_auto/v1778646505/WhatsApp_Image_2026-05-12_at_23.02.53_pvo31f.jpg",
+  calLink: siteConfig.calLink,
+  avatar: siteConfig.avatar,
   bio: data.profile.bio,
   headlineTags: data.profile.headlineTags,
 };

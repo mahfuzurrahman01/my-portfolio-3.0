@@ -3,8 +3,9 @@ import Background from "@/components/ui/background";
 import BackBar from "@/components/portfolio/BackBar";
 import { BookOpen, Clock, ExternalLink } from "lucide-react";
 import { blogConfig, getDevtoArticles } from "@/lib/portfolio-data";
+import { siteConfig } from "@/config/site";
 
-export const metadata = { title: "Blog · Mafuzur Rahman" };
+export const metadata = { title: `Blog · ${siteConfig.name}` };
 
 export default async function BlogPage() {
   const articles = await getDevtoArticles(30);

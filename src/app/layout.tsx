@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { siteConfig, siteDescription, nameParts } from "@/config/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,71 +13,41 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://mafuzur.com";
-const AUTHOR = "Mafuzur Rahman";
-const AUTHOR_ALT = "Mahfuzur Rahman";
-const ROLE = "Software Developer & Technical Writer";
-const OG_IMAGE =
-  "https://res.cloudinary.com/dka0q8f82/image/upload/c_fill,g_face,ar_1.91:1,w_1200,q_auto,f_auto/v1778646505/WhatsApp_Image_2026-05-12_at_23.02.53_pvo31f.jpg";
-
-const DESCRIPTION = `${AUTHOR} (also spelled ${AUTHOR_ALT}) — software developer, full-stack engineer and technical writer from Dhaka, Bangladesh with 4+ years shipping AI-powered web and mobile products. Building with React, Next.js, TypeScript, Node.js, React Native, and Gemini/OpenAI agentic workflows across healthcare, ERP, and SaaS. Portfolio, projects, blog, and contact.`;
+const SITE_URL = siteConfig.url;
+const AUTHOR = siteConfig.name;
+const ROLE = siteConfig.role;
+const OG_IMAGE = siteConfig.avatar;
+const DESCRIPTION = siteDescription;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `swe-mafuz · ${AUTHOR} — Software Developer & AI Builder`,
-    template: `%s · swe-mafuz`,
+    default: `${siteConfig.handle} · ${AUTHOR} — ${siteConfig.ogRole}`,
+    template: `%s · ${siteConfig.handle}`,
   },
   description: DESCRIPTION,
   applicationName: `${AUTHOR} Portfolio`,
   authors: [{ name: AUTHOR, url: SITE_URL }],
   creator: AUTHOR,
   publisher: AUTHOR,
-  keywords: [
-    "Mafuzur Rahman",
-    "Mahfuzur Rahman",
-    "Mafuzur Rahman portfolio",
-    "Mahfuzur Rahman portfolio",
-    "Mafuzur Rahman software developer",
-    "Mahfuzur Rahman software developer",
-    "Mafuzur Rahman frontend developer",
-    "Mafuzur Rahman full stack developer",
-    "Mafuzur Rahman AI engineer",
-    "Mafuzur Rahman React developer",
-    "Mafuzur Rahman Next.js developer",
-    "Mafuzur Rahman Dhaka",
-    "Mafuzur Rahman Bangladesh",
-    "software developer Bangladesh",
-    "frontend developer Dhaka",
-    "React developer Bangladesh",
-    "Next.js developer",
-    "TypeScript engineer",
-    "Node.js engineer",
-    "React Native developer",
-    "AI engineer",
-    "agentic AI developer",
-    "Gemini API developer",
-    "OpenAI developer",
-    "technical writer",
-    "mafuzur.com",
-  ],
+  keywords: [...siteConfig.keywords],
   alternates: { canonical: SITE_URL },
   openGraph: {
     type: "profile",
     url: SITE_URL,
-    title: `${AUTHOR} — Software Developer & AI Builder`,
+    title: `${AUTHOR} — ${siteConfig.ogRole}`,
     description: DESCRIPTION,
     siteName: `${AUTHOR} Portfolio`,
-    firstName: "Mafuzur",
-    lastName: "Rahman",
-    username: "mahfuzurrahman01",
+    firstName: nameParts.firstName,
+    lastName: nameParts.lastName,
+    username: siteConfig.socials.github.split("/").pop(),
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${AUTHOR} — Software Developer & AI Builder`,
+    title: `${AUTHOR} — ${siteConfig.ogRole}`,
     description: DESCRIPTION,
-    creator: "@mahfuzur_kaizen",
+    creator: siteConfig.twitterHandle,
   },
   robots: {
     index: true,
@@ -96,41 +67,27 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: AUTHOR,
-  alternateName: [AUTHOR_ALT, "Mafuz"],
+  alternateName: [...siteConfig.altNames],
   url: SITE_URL,
   image: OG_IMAGE,
   jobTitle: ROLE,
   description: DESCRIPTION,
-  email: "mailto:mafuzur.rahman032@gmail.com",
+  email: `mailto:${siteConfig.email}`,
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Dhaka",
-    addressCountry: "Bangladesh",
+    addressLocality: siteConfig.location.city,
+    addressCountry: siteConfig.location.country,
   },
   worksFor: {
     "@type": "Organization",
-    name: "ESAP",
+    name: siteConfig.currentEmployer,
   },
-  knowsAbout: [
-    "Software Development",
-    "Full-Stack Engineering",
-    "Frontend Development",
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Node.js",
-    "React Native",
-    "Artificial Intelligence",
-    "Agentic AI",
-    "Gemini API",
-    "OpenAI API",
-    "Technical Writing",
-  ],
+  knowsAbout: [...siteConfig.knowsAbout],
   sameAs: [
-    "https://github.com/mahfuzurrahman01",
-    "https://www.linkedin.com/in/mafuzurrahman01/",
-    "https://x.com/mahfuzur_kaizen",
-    "https://dev.to/mahfuzurrahman01",
+    siteConfig.socials.github,
+    siteConfig.socials.linkedin,
+    siteConfig.socials.x,
+    siteConfig.socials.devto,
   ],
 };
 

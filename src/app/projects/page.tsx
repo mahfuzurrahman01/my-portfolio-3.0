@@ -4,8 +4,9 @@ import BackBar from "@/components/portfolio/BackBar";
 import ProjectGrid from "./ProjectGrid";
 import { projects, extensions } from "@/lib/portfolio-data";
 import { Folder, Info, Puzzle } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
-export const metadata = { title: "Projects · Mafuzur Rahman" };
+export const metadata = { title: `Projects · ${siteConfig.name}` };
 
 export default function ProjectsPage() {
   return (

@@ -3,8 +3,9 @@ import Background from "@/components/ui/background";
 import BackBar from "@/components/portfolio/BackBar";
 import { education, certifications } from "@/lib/portfolio-data";
 import { Award, GraduationCap, CheckCircle2, Route } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
-export const metadata = { title: "Trail · Mafuzur Rahman" };
+export const metadata = { title: `Trail · ${siteConfig.name}` };
 
 export default function TrailPage() {
   return (
@@ -26,7 +27,7 @@ export default function TrailPage() {
           </h1>
           <p className="mt-2 max-w-2xl text-sm text-foreground/65 lg:text-base">
             Where I came from and what I picked up along the way — formal
-            education and the certifications I've collected since pivoting to
+            education and the certifications I&apos;ve collected since pivoting to
             engineering.
           </p>
         </header>

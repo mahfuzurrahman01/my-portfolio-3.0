@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Background from "@/components/ui/background";
 import BackBar from "@/components/portfolio/BackBar";
 import { extensions } from "@/lib/portfolio-data";
+import { siteConfig } from "@/config/site";
 import {
   CheckCircle2,
   ExternalLink,
@@ -26,7 +27,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const ext = extensions.find((e) => e.slug === slug);
   return {
-    title: ext ? `${ext.name} · Mafuzur Rahman` : "Extension not found",
+    title: ext ? `${ext.name} · ${siteConfig.name}` : "Extension not found",
   };
 }
 

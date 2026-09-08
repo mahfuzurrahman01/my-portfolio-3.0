@@ -1,8 +1,9 @@
 import { ImageResponse } from "next/og";
+import { siteConfig } from "@/config/site";
 
 export const runtime = "edge";
-export const alt =
-  "Mafuzur Rahman — Software Developer & AI Builder | mafuzur.com";
+const DOMAIN = siteConfig.url.replace(/^https?:\/\//, "");
+export const alt = `${siteConfig.name} — ${siteConfig.ogRole} | ${DOMAIN}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -58,7 +59,7 @@ export default async function OGImage() {
                 display: "flex",
               }}
             />
-            mafuzur.com · Dhaka, Bangladesh
+            {DOMAIN} · {siteConfig.location.city}, {siteConfig.location.country}
           </div>
 
           <div
@@ -71,7 +72,7 @@ export default async function OGImage() {
               display: "flex",
             }}
           >
-            Mafuzur Rahman
+            {siteConfig.name}
           </div>
 
           <div
@@ -84,20 +85,13 @@ export default async function OGImage() {
               letterSpacing: "-0.01em",
             }}
           >
-            Software Developer & AI Builder
+            {siteConfig.ogRole}
           </div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            {[
-              "React",
-              "Next.js",
-              "TypeScript",
-              "Node.js",
-              "React Native",
-              "AI / Agentic",
-            ].map((t) => (
+            {siteConfig.ogTech.map((t) => (
               <div
                 key={t}
                 style={{
@@ -133,7 +127,7 @@ export default async function OGImage() {
                 letterSpacing: "-0.01em",
               }}
             >
-              mafuzur.rahman032@gmail.com
+              {siteConfig.email}
             </div>
             <div
               style={{
@@ -144,7 +138,7 @@ export default async function OGImage() {
                 textTransform: "uppercase",
               }}
             >
-              4+ Years · Full-Stack · AI
+              {siteConfig.yearsExperience}+ Years · Full-Stack · AI
             </div>
           </div>
         </div>

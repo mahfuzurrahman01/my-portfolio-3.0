@@ -3,8 +3,9 @@ import BackBar from "@/components/portfolio/BackBar";
 import { SkillIcon } from "@/components/portfolio/skillIcons";
 import { skillGroups, profile } from "@/lib/portfolio-data";
 import { Sparkles } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
-export const metadata = { title: "Skills · Mafuzur Rahman" };
+export const metadata = { title: `Skills · ${siteConfig.name}` };
 
 export default function SkillsPage() {
   const totalSkills = skillGroups.reduce(
