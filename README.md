@@ -2,7 +2,7 @@
 
 A bento-grid developer portfolio built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, **Tailwind CSS v4** and **Framer Motion** — content-driven, SEO-complete, deploy-in-10-minutes.
 
-Live example: **[mafuzur.com](https://mafuzur.com)**
+Live demo: **[my-portfolio-3-0-taupe.vercel.app](https://my-portfolio-3-0-taupe.vercel.app)**
 
 ---
 
